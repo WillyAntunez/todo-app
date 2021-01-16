@@ -29,7 +29,7 @@ const saveOrder = ($todosArr) => {
 
 const dragAndDrop =  e => { 
 
-    new Sortable($todos, {
+    const sortable = new Sortable($todos, {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable'
@@ -41,13 +41,17 @@ const dragAndDrop =  e => {
         };
     });
 
+    d.addEventListener('touchstart', e => {
+        e.preventDefault()
+        if(e.target.matches('.todo *')){
+            sortable = ''
+        }
+    })
+
     d.addEventListener('touchend', e => {
         if(e.target.matches('.todo')){
             saveOrder();
         };
-        if(e.target.matches('.todo *')){
-            e.stopPropagation()
-        }
     });
     
 
