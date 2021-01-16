@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body data-dark="">
+
+  <div class="hero" data-dark=""></div>
+
+  <header class="container">
+    <h1><a href="#all">T O D O</a></h1>
+    <img class="dark-button" src="./images/icon-moon.svg"></img>
+  </header>
+
+  <section class="container">
+
+    <div >
+      <form class="todo-input" data-dark="active">
+        <input type="checkbox" name="completed" class="check-todo" data-dark="" >
+        <input required type="text" name="name" placeholder="Create a new todo..." autocomplete="off">
+      </form>
+    </div>
+
+  
+    <div class="todos-container" data-dark="">
+      <ul class="todos">
+        
+      </ul>
+      <div class="todos-info">
+        <p id="items-left">0 items left</p>
+        <button class="clear-btn">Clear completed</button>
+      </div>
+    </div>
+
+    <div class="todos-filter" data-dark="">
+      <a class="showAll" href="#all">All</a>
+      <a class="showActive" href="#active">Active</a>
+      <a class="showCompleted" href="#completed">completed</a>
+    </div>
+
+  </section>
+
+  <div class="container message">
+    Drag and drop to reorder list
+  </div>
+
+  <div class="modal-container">
+    <div class="modal">
+      <img src="./images/cross-modal.svg" alt="cross signal">
+      <h2>Are you shure?</h2>
+      <h3 class="message">Do you really want to delete this?</h3>
+      <div class="modal-options">
+        <button class="cancel">Cancel</button>
+        <button class="delete" data-id="">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Willy Antunez</a>.
+  </footer> -->
+
+  <template id="todo-template">
+    <li class="todo" data-dark=""">
+      <input type="checkbox" class="check-todo" >
+      <p></p>
+      <button></button>
+    </li>
+  </template>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js" integrity="sha512-5x7t0fTAVo9dpfbp3WtE2N6bfipUwk7siViWncdDoSz2KwOqVC1N9fDxEOzk0vTThOua/mglfF8NO7uVDLRC8Q==" crossorigin="anonymous"></script>
+  <script src="index.js" type="module"></script>
+
+</body>
+</html>
