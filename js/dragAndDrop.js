@@ -1,5 +1,4 @@
 import { readTodos } from "./todoServices.js";
-import { showModal } from '../js/todoServices.js'
 
 const d = document,
     $todos = d.querySelector('.todos');
@@ -36,14 +35,13 @@ const dragAndDrop =  e => {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable',
+        delay: 1000,
+        delayOnTouchOnly: true,
         onEnd: e => {
             saveOrder();
         },
         onChoose: e => {
-            return false;
-        },
-        onUnChoose: e => {
-            return false;
+            navigator.vibrate(100);
         }
     });
 
