@@ -23,8 +23,6 @@ const saveOrder = ($todosArr) => {
 
         localStorage.setItem('todosConfig', JSON.stringify(todosConfig));
 
-        console.log('se ejecuto')
-
         readTodos();
     };
 };
@@ -35,13 +33,13 @@ const dragAndDrop =  e => {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable',
-        delay: 500,
+        delay: 10,
         delayOnTouchOnly: true,
         onEnd: e => {
             saveOrder();
         },
         onChoose: e => {
-            window.navigator.vibrate() && window.navigator.vibrate(100);
+            window.navigator.vibrate(100) && window.navigator.vibrate(100);
         }
     });
 
