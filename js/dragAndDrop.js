@@ -32,30 +32,12 @@ const dragAndDrop =  e => {
     new Sortable($todos, {
         animation: 150,
         ghostClass: 'dragging',
-        filter: '.non-draggable'
-    });
-
-    d.addEventListener('drop', e => {
-        if(e.target.matches('.todo') || e.target.matches('.todo *')){
+        filter: '.non-draggable',
+        onEnd: e => {
             saveOrder();
-        };
+       }
     });
 
-    d.addEventListener('touchstart', e => {
-        if(e.target.matches('.clear-btn')){
-            e.stopPropagation()
-            const message = 'Do you really want to delete all completed items?';
-            showModal({id: null, message});
-            return;
-        };
-    });
-
-    d.addEventListener('touchend', e => {
-        if(e.target.matches('.todo')){
-            saveOrder();
-        };
-    });
-    
 
 };
 
