@@ -47,16 +47,6 @@ const dragAndDrop =  e => {
         }
     });
 
-    d.addEventListener('touchstart', (e) => {
-        console.log(e)
-        if(e.target.matches('.todo>button')){
-            const id = e.target.getAttribute('data-id'),
-                message = 'Do you really want to delete this item?';
-            showModal({id, message});
-            return;
-        }
-    })
-
 
 };
 

@@ -301,6 +301,8 @@ header .dark-button{
     display: block;
     transition: opacity .4s ease;
     position: relative;
+
+    z-index: 99;
 }
 
 .todos .todo button::before{
