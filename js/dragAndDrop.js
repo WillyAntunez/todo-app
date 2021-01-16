@@ -42,8 +42,7 @@ const dragAndDrop =  e => {
     });
 
     d.addEventListener('touchstart', e => {
-        e.preventDefault()
-        if(e.target.matches('.todo *')){
+        if(e.target.matches('.todo>*')){
             sortable = ''
         }
     })
