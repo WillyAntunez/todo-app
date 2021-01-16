@@ -29,7 +29,7 @@ const saveOrder = ($todosArr) => {
 
 const dragAndDrop =  e => { 
 
-    const sortable = new Sortable($todos, {
+    new Sortable($todos, {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable'
@@ -42,10 +42,12 @@ const dragAndDrop =  e => {
     });
 
     d.addEventListener('touchstart', e => {
-        if(e.target.matches('.todo>*')){
-            sortable = ''
-        }
-    })
+        if(e.target.matches('.clear-btn')){
+            const message = 'Do you really want to delete all completed items?';
+            showModal({id: null, message});
+            return;
+        };
+    });
 
     d.addEventListener('touchend', e => {
         if(e.target.matches('.todo')){

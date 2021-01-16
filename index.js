@@ -66,8 +66,6 @@ d.addEventListener('click', e => {
         readTodos();
     }
 
-    
-
 
 });
 
