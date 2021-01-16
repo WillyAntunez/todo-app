@@ -35,6 +35,10 @@ const dragAndDrop =  e => {
         filter: '.non-draggable',
         onEnd: e => {
             saveOrder();
+        },
+        onChoose: e => {
+            e.stopPropagation()
+            console.log(e)
        }
     });
 
