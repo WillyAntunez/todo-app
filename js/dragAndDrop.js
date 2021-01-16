@@ -46,9 +46,10 @@ const dragAndDrop =  e => {
         }
     });
 
-    d.addEventListener('click', (e) => {
+    d.addEventListener('touchstart', (e) => {
+        console.log(e)
         if(e.target.matches('.todo>button')){
-            
+            sortable.option('disabled', true)
         }
     })
 
