@@ -23,13 +23,15 @@ const saveOrder = ($todosArr) => {
 
         localStorage.setItem('todosConfig', JSON.stringify(todosConfig));
 
+        console.log('se ejecuto')
+
         readTodos();
     };
 };
 
 const dragAndDrop =  e => { 
 
-    new Sortable($todos, {
+    const sortable = new Sortable($todos, {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable',
@@ -37,10 +39,18 @@ const dragAndDrop =  e => {
             saveOrder();
         },
         onChoose: e => {
-            e.stopPropagation()
-            console.log(e)
-       }
+            return false;
+        },
+        onUnChoose: e => {
+            return false;
+        }
     });
+
+    d.addEventListener('click', (e) => {
+        if(e.target.matches('.todo>button')){
+            
+        }
+    })
 
 
 };
