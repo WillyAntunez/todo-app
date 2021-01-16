@@ -33,7 +33,7 @@ const dragAndDrop =  e => {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable',
-        delay: 10,
+        delay: 100,
         delayOnTouchOnly: true,
         onEnd: e => {
             saveOrder();
