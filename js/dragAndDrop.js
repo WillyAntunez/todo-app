@@ -42,9 +42,12 @@ const dragAndDrop =  e => {
     });
 
     d.addEventListener('touchend', e => {
-        if(e.target.matches('.todo') /* || e.target.matches('.todo *') */){
+        if(e.target.matches('.todo')){
             saveOrder();
         };
+        if(e.target.matches('.todo *')){
+            e.stopPropagation()
+        }
     });
     
 
