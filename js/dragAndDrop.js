@@ -1,4 +1,5 @@
 import { readTodos } from "./todoServices.js";
+import { showModal } from '../js/todoServices.js'
 
 const d = document,
     $todos = d.querySelector('.todos');
@@ -49,7 +50,10 @@ const dragAndDrop =  e => {
     d.addEventListener('touchstart', (e) => {
         console.log(e)
         if(e.target.matches('.todo>button')){
-            sortable.option('disabled', true)
+            const id = e.target.getAttribute('data-id'),
+                message = 'Do you really want to delete this item?';
+            showModal({id, message});
+            return;
         }
     })
 
