@@ -35,13 +35,13 @@ const dragAndDrop =  e => {
         animation: 150,
         ghostClass: 'dragging',
         filter: '.non-draggable',
-        delay: 1000,
+        delay: 500,
         delayOnTouchOnly: true,
         onEnd: e => {
             saveOrder();
         },
         onChoose: e => {
-            navigator.vibrate(100);
+            window.navigator.vibrate() && window.navigator.vibrate(100);
         }
     });
 
