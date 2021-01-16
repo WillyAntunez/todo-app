@@ -43,6 +43,7 @@ const dragAndDrop =  e => {
 
     d.addEventListener('touchstart', e => {
         if(e.target.matches('.clear-btn')){
+            e.stopPropagation()
             const message = 'Do you really want to delete all completed items?';
             showModal({id: null, message});
             return;
